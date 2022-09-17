@@ -24,7 +24,7 @@ public class BuyOffice {
         double discount = user.getSubscription().getSubscriptionDiscount();
         if (paymentType.pay(discount)) {
             FmssGame.addSubscription(user, subscriptionType);
-            System.out.println("Satın alma başarılı.");
+            System.out.println("Subscription: Satın alma başarılı.");
         } else {
             System.out.println("Satın alım başarısız");
         }

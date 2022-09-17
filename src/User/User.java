@@ -21,23 +21,24 @@ public class User {
         this.library = library;
     }
 
-    public int getId() {
-        return id;
-    }
-
     public Subscription getSubscription() {
         return subscription;
     }
 
-    public List<Game> getLibrary() {
-        return library;
-    }
-
-    public void setWalletBalance(double walletBalance) {
-        this.walletBalance = walletBalance;
+    public void addWalletBalance(double walletBalance) {
+        this.walletBalance += walletBalance;
     }
 
     public boolean doYouHaveAGame(Game game) {
         return library.contains(game);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(id).append(" ").append(name).append(" balance:").append(walletBalance).append(" \n\tsubscription type: ").append(subscription.subscriptionType).append(" expire date: ").append(subscription.endSubscription);
+
+        library.forEach(t -> sb.append("\n\t").append(t.title));
+        return sb.toString();
     }
 }

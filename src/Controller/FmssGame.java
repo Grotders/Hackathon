@@ -3,7 +3,7 @@ package Controller;
 import game.Game;
 
 import java.util.ArrayList;
-import java.util.List;
+
 import User.*;
 import game.GameController;
 
@@ -18,7 +18,7 @@ public class FmssGame {
     }
 
     public static void addWalletBalance(User user, double balance) {
-        user.setWalletBalance(balance);
+        user.addWalletBalance(balance);
     }
 
     public static void playGame(User user, Game game) {
@@ -26,7 +26,4 @@ public class FmssGame {
             GameController.run(game);
         }
     }
-
-
-
 }
