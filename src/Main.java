@@ -11,8 +11,6 @@ public class Main {
     public static void main(String[] args) {
         User user = Database.users.get(1);
 
-        FmssGame.playGame(user, Database.gameById(1));
-
         System.out.println(user);
         System.out.println();
 
@@ -28,5 +26,9 @@ public class Main {
 
         BuyOffice.buyGame(user, new PayByWallet(), Database.gameById(3));
         System.out.println(user);
+
+        System.out.println();
+
+        FmssGame.playGame(user, Database.gameById(3));
     }
 }
